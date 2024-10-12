@@ -1,0 +1,1 @@
+export { serializeAttributes } from './serializeAttribute';

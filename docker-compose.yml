@@ -1,0 +1,8 @@
+services:
+  weather-nginx:
+    image: nginx:latest
+    ports:
+      - "9999:3000"
+    volumes:
+      - /var/www/html:/app/index.html
+    restart: always

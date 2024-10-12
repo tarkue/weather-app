@@ -8,28 +8,53 @@
     <meta name="author" content="tarkue">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="./src/app/style.css">
-    <script src="./dist/app/index.js"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=7958e186-cc55-4de4-8c31-da20af7c361e&lang=ru_RU"></script>
 </head>
 <body>
-    <header>
-        <h1>Weather App</h1>
-        <button>
-            <span></span>
-            Добавить город
-        </button>
+    <header class="container_lg header center">
+        <img src="https://ucarecdn.com/bd277e43-ece1-47a5-bc58-07e0bda5e7fc/" alt="WEATHER" class="logo"/>
+        <div class="add_country" id="add_country_button">
+            <div class="button_secondary button_sm rounded">
+                <span class="icon_plus"></span>
+            </div>
+            <span class="text_16_medium">
+                Добавить город
+            </span>
+        </div>
     </header>
-    <main>
-        <ul class="weather_items__list">
-            <li>
-                <div class="weather_item">
-                    
-                </div>
-            </li>
-        </ul>
+    <main class="container_lg center">
+        <div is="weather-items"></div>
         <div class="ymap">
-            <button>Отобразить погоду на 24.33° 55.35°</button>
+            <button class="button_primary button_lg border_sm">
+                <span class="text_16_medium">
+                    Отобразить погоду на 24.33° 55.35°
+                </span>
+            </button>
         </div>
     </main>
-
+    <div class="modal bg_blur flex_center unvisible" id="add_country_modal">
+        <div class="container_sm add_widget">
+            <div class="add_widget__header">
+                <h1 class="add_widget__name">
+                    Добавить виджет
+                </h1>
+                <button class="icon_button" id="close_modal">
+                    <span class="icon_close"></span>
+                </button>
+            </div>
+            <div class="add_widget__content">
+                <div class="search_input" id="search_input_wrapper">
+                    <input 
+                        type="text"
+                        placeholder="Город или район" 
+                        id="search_input"
+                    />
+                    <span class="icon_search"></span>
+                </div>
+                <country-list id="country_list"></country-list>
+            </div>
+        </div>
+    </div>
+    <script src="./dist/app/index.js"></script>
 </body>
 </html>
