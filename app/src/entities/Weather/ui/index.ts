@@ -1,2 +1,2 @@
-export * from './glyph';
-export * from './widget';
+export * from './glyph/index.js';
+export * from './widget/index.js';

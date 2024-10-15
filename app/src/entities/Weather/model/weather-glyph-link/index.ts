@@ -1,1 +1,1 @@
-export { WeatherGlyphLink } from './wearher-glyph-link';
+export { WeatherGlyphLink } from './wearher-glyph-link.js';

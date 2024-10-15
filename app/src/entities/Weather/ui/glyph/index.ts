@@ -1,1 +1,1 @@
-export { WeatherGlyph } from './glyph';
+export { WeatherGlyph } from './glyph.js';

@@ -1,4 +1,4 @@
-import { WeatherGlyphLink } from '../../model';
+import { WeatherGlyphLink } from '../../model/index.js';
 
 export class WeatherGlyph extends HTMLElement {
   static observedAttributes = ['glyph'] as const;

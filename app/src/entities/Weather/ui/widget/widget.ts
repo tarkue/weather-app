@@ -1,5 +1,5 @@
-import { serializeAttributes } from '@/shared/libs';
-import { observedAttributes } from './attrubutes';
+import { serializeAttributes } from '../../../../shared/libs/index.js';
+import { observedAttributes } from './attrubutes.js';
 
 export class WeatherWidget extends HTMLElement {
   public static readonly observedAttributes = observedAttributes;

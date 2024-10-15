@@ -1,1 +1,1 @@
-export { WeatherWidget } from './widget';
+export { WeatherWidget } from './widget.js';

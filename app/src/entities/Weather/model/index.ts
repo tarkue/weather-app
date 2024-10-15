@@ -1,2 +1,1 @@
-export { WeatherGlyphLink } from './weather-glyph-link';
-export { WeatherWidgetProps } from './weather-widget-props';
+export { WeatherGlyphLink } from './weather-glyph-link/index.js';
