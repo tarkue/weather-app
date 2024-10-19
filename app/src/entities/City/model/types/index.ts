@@ -1,4 +1,4 @@
-export interface ICountry {
+export interface ICity {
   address: string;
   lnglat: [string, string];
 }

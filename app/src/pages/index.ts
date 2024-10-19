@@ -2,20 +2,23 @@ import { toggleViewModal } from '../shared/libs/index.js';
 import { InputChangeEvent } from '../shared/types/index.js';
 
 export const InitIndexPage = () => {
-  const modalAddCountry = document.getElementById('add_country_modal');
-  const buttonAddCountry = document.getElementById('add_country_button');
+  const modalAddCity = document.getElementById('add_city_modal');
+  const buttonAddCity = document.getElementById('add_city_button');
   const closeModal = document.getElementById('close_modal');
-  const countryList = document.getElementById('country_list');
+  const cityList = document.getElementById('city_list');
   const searchInputWrapper = document.getElementById('search_input_wrapper');
-  const searchInput = document.getElementById('search_input');
+  const searchInput = document.getElementById(
+    'search_input',
+  ) as HTMLInputElement;
 
-  buttonAddCountry?.addEventListener('click', () =>
-    toggleViewModal(modalAddCountry),
-  );
-  closeModal?.addEventListener('click', () => toggleViewModal(modalAddCountry));
+  buttonAddCity?.addEventListener('click', () => toggleViewModal(modalAddCity));
+  closeModal?.addEventListener('click', () => {
+    toggleViewModal(modalAddCity);
+    searchInput.value = '';
+  });
   searchInputWrapper?.addEventListener('click', () => searchInput?.focus());
 
   searchInput?.addEventListener('input', (e: InputChangeEvent) => {
-    countryList?.setAttribute('search', e.target?.value || '');
+    cityList?.setAttribute('search', e.target?.value || '');
   });
 };

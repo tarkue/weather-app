@@ -1,6 +1,6 @@
-import { searchCity } from '../../../../entities/Country/index.js';
+import { searchCity } from '../../../../entities/City/index.js';
 
-export class CountryList extends HTMLElement {
+export class CityList extends HTMLElement {
   static observedAttributes = ['search'];
 
   constructor() {
@@ -9,7 +9,7 @@ export class CountryList extends HTMLElement {
 
   private setMessageInInnerHTML(message: string) {
     this.innerHTML = `
-      <ul class="country_list">
+      <ul class="city_list">
         <li class="text_16_medium start_typing">
           ${message}
         </li>
@@ -22,13 +22,13 @@ export class CountryList extends HTMLElement {
   }
 
   private addEventListenersOnButtons() {
-    const elements = this.querySelectorAll('#add_country_button');
+    const elements = this.querySelectorAll('#add_city_button');
     elements.forEach((el) => {
       el.addEventListener('click', () => {
         const address = el.getAttribute('data-adress');
         const lnglat = el.getAttribute('data-lnglat');
 
-        const event = new CustomEvent('add-country', {
+        const event = new CustomEvent('add-city', {
           bubbles: true,
           detail: { address, lnglat },
         });
@@ -57,19 +57,19 @@ export class CountryList extends HTMLElement {
         return;
       }
       this.innerHTML = `
-        <ul class="country_list">
+        <ul class="city_list">
           ${countries
             .map(
-              (country) => `
+              (city) => `
             <li>
               <button 
-                class="country_item text_16_medium" 
-                data-adress="${country.address}" 
-                data-lnglat="${country.lnglat}"
-                id="add_country_button"
+                class="city_item text_16_medium" 
+                data-adress="${city.address}" 
+                data-lnglat="${city.lnglat}"
+                id="add_city_button"
 
               >
-                ${country.address}
+                ${city.address}
               </button>
             </li>
           `,

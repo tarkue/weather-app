@@ -201,8 +201,8 @@ ul, li {
     background: var(--secondary-darken-color);
 }
 
-/* Add Country */
-.add_country {
+/* Add City */
+.add_city {
     display: flex;
     gap: 8px;
     align-items: center;
@@ -210,12 +210,12 @@ ul, li {
     cursor: pointer;
 }
 
-.add_country > span {
+.add_city > span {
     color: var(--text-ghost-color);
     cursor: pointer;
 }
 
-.add_country:hover .button_secondary {
+.add_city:hover .button_secondary {
     background: var(--secondary-darken-color);
 }
 
@@ -322,8 +322,8 @@ ul, li {
     width: 100%;
 }
 
-/* Country Item */
-.country_item {
+/* City Item */
+.city_item {
     display: block;
     text-align: left;
 
@@ -336,15 +336,15 @@ ul, li {
     cursor: pointer;
 }
 
-.country_item:hover {
+.city_item:hover {
     background: var(--primary-ghost-color);
 }
-.country_item:active {
+.city_item:active {
     transform: scale(0.98);
 }
 
-/* Country List */
-.country_list {
+/* City List */
+.city_list {
     display: flex;
     flex-direction: column;
 
@@ -356,7 +356,7 @@ ul, li {
 .modal, .button_primary, 
 .icon_button, .icon_button > span,
 .button_secondary,
-.country_item {
+.city_item {
     transition: all 0.3s ease-in-out;
 }
 

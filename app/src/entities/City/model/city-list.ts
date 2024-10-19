@@ -1,6 +1,6 @@
-import { ICountry } from './types/index.js';
+import { ICity } from './types/index.js';
 
-export const CountryList: ICountry[] = [
+export const CityList: ICity[] = [
   {
     address: 'Респ Адыгея, г Адыгейск',
     lnglat: ['39.190289', '44.878414'],

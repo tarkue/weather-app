@@ -13,7 +13,7 @@
 <body>
     <header class="container_lg header center">
         <img src="https://ucarecdn.com/bd277e43-ece1-47a5-bc58-07e0bda5e7fc/" alt="WEATHER" class="logo"/>
-        <div class="add_country" id="add_country_button">
+        <div class="add_city" id="add_city_button">
             <div class="button_secondary button_sm rounded">
                 <span class="icon_plus"></span>
             </div>
@@ -23,16 +23,16 @@
         </div>
     </header>
     <main class="container_lg center">
-        <div is="weather-items"></div>
+        <weather-widget-list is="weather-items"></weather-widget-list>
         <div class="map" id="map" width="100%" height="100%">
-            <button class="button_primary button_lg border_sm" id="add_country_map">
+            <button class="button_primary button_lg border_sm" id="add_city_map">
                 <span class="text_16_medium">
                     Отобразить погоду здесь
                 </span>
             </button>
         </div>
     </main>
-    <div class="modal bg_blur flex_center unvisible" id="add_country_modal">
+    <div class="modal bg_blur flex_center unvisible" id="add_city_modal">
         <div class="container_sm add_widget">
             <div class="add_widget__header">
                 <h1 class="add_widget__name">
@@ -51,7 +51,7 @@
                     />
                     <span class="icon_search"></span>
                 </div>
-                <country-list id="country_list"></country-list>
+                <city-list id="city_list"></city-list>
             </div>
         </div>
     </div>
