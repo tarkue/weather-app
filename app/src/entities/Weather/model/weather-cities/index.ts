@@ -1,0 +1,1 @@
+export { WeatherCitiesStorage } from './storage.js';

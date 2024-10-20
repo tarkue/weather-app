@@ -1,8 +1,5 @@
 services:
-  weather-nginx:
-    image: nginx:latest
+  web:
+    build: .
     ports:
-      - "9999:3000"
-    volumes:
-      - /var/www/html:/app/index.html
-    restart: always
+      - "3000:80"

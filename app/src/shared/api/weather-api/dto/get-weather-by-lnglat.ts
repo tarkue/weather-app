@@ -1,31 +1,31 @@
 export interface GetWeatherByLngLatDTO {
-  lat: number;
-  lon: number;
-  timezone: string;
-  timezone_offset: number;
-  current: ICurrent;
+  main: IMain;
+  dt: number;
+  weather: IWeather[];
+  wind: IWind;
+  sys: ISys;
+  timezone: number;
+  name: string;
 }
 
-interface ICurrent {
-  dt: number;
+interface ISys {
   sunrise: number;
   sunset: number;
-  temp: number;
-  feels_like: number;
-  pressure: number;
-  humidity: number;
-  dew_point: number;
-  uvi: number;
-  clouds: number;
-  visibility: number;
-  wind_speed: number;
-  wind_deg: number;
-  weather: IWeather[];
 }
 
 interface IWeather {
-  id: number;
   main: string;
   description: string;
   icon: string;
+}
+
+interface IMain {
+  temp: number;
+  feels_like: number;
+  humidity: number;
+  pressure: number;
+}
+
+interface IWind {
+  speed: number;
 }

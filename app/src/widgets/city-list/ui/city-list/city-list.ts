@@ -1,4 +1,5 @@
 import { searchCity } from '../../../../entities/City/index.js';
+import { generateCityList } from '../../lib/generate-html.js';
 
 export class CityList extends HTMLElement {
   static observedAttributes = ['search'];
@@ -25,14 +26,21 @@ export class CityList extends HTMLElement {
     const elements = this.querySelectorAll('#add_city_button');
     elements.forEach((el) => {
       el.addEventListener('click', () => {
-        const address = el.getAttribute('data-adress');
-        const lnglat = el.getAttribute('data-lnglat');
+        const address = el.getAttribute('data-address');
+        const dataLnglat = el.getAttribute('data-lnglat');
+
+        if (!address || !dataLnglat) {
+          return;
+        }
+
+        const lnglat = dataLnglat.split(',');
 
         const event = new CustomEvent('add-city', {
           bubbles: true,
           detail: { address, lnglat },
         });
         this.dispatchEvent(event);
+        setTimeout(() => this.setDefaultInnerHTML(), 500);
       });
     });
   }
@@ -56,27 +64,7 @@ export class CityList extends HTMLElement {
         this.setMessageInInnerHTML('Ничего не найдено');
         return;
       }
-      this.innerHTML = `
-        <ul class="city_list">
-          ${countries
-            .map(
-              (city) => `
-            <li>
-              <button 
-                class="city_item text_16_medium" 
-                data-adress="${city.address}" 
-                data-lnglat="${city.lnglat}"
-                id="add_city_button"
-
-              >
-                ${city.address}
-              </button>
-            </li>
-          `,
-            )
-            .join('')}
-        </ul>
-      `;
+      this.innerHTML = generateCityList(countries);
       this.addEventListenersOnButtons();
     }
   }

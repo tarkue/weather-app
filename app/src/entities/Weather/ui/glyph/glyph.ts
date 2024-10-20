@@ -1,5 +1,3 @@
-import { WeatherGlyphLink } from '../../model/index.js';
-
 export class WeatherGlyph extends HTMLElement {
   static observedAttributes = ['glyph'] as const;
 
@@ -17,7 +15,7 @@ export class WeatherGlyph extends HTMLElement {
     this.innerHTML = `
       <img 
         class="weather_glyph" 
-        src="${WeatherGlyphLink[glyph]}" 
+        src="https://openweathermap.org/img/wn/${glyph}@2x.png" 
         alt="glyph" 
         width="48" 
         height="48" 

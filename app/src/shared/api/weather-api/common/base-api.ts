@@ -1,7 +1,7 @@
 import { ApiError } from './error.js';
 
 export class BaseApi {
-  protected static baseUrl = 'https://api.openweathermap.org/data/3.0';
+  protected static baseUrl = 'https://api.openweathermap.org/data/2.5';
 
   protected static buildUrl(path: string) {
     return `${this.baseUrl}${path}`;

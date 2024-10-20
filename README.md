@@ -14,6 +14,14 @@
 - конфигурация Dockerfile, Docker-compose, nginx.
 
 ## Design 
-[Изначальный макет от Artsofte](https://www.figma.com/file/IS1D3zWif7Ode5LarG4E0v/Untitled?node-id=0%3A1) пришлось немного переделать, быстренько набросал [новый макет]()
+[Изначальный макет от Artsofte](https://www.figma.com/file/IS1D3zWif7Ode5LarG4E0v/Untitled?node-id=0%3A1) пришлось немного переделать, быстренько набросал [новый макет](https://www.figma.com/design/AomqlwIV5GA24V943H2YAp/WEATHER-APP?node-id=0-1&t=LN4jPUvFjhaHU3tv-1)
 
 ## Запуск
+
+Изначально в docker-compose указан порт 3000, можете его изменить. 
+
+
+### Команда запуска
+```
+docker compose up -d
+```
