@@ -1,4 +1,4 @@
-import { setItem } from '../../entities/Coord/index.js';
+import { setMarker } from '../../entities/Coord/index.js';
 
 export async function initMap() {
   // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
@@ -71,7 +71,7 @@ export async function initMap() {
       if (!e) return;
 
       setMarker(e.entity.geometry.coordinates);
-      setItem(e.entity.geometry.coordinates);
+      setMarker(e.entity.geometry.coordinates);
     },
   });
 
@@ -80,7 +80,7 @@ export async function initMap() {
     new YMapGeolocationControl({
       onGeolocatePosition: (coord) => {
         setMarker(coord);
-        setItem(coord);
+        setMarker(coord);
       },
     }),
   );

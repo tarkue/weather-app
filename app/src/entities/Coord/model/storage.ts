@@ -1,9 +1,9 @@
-import { LngLat } from 'app/src/shared/types';
+import { LngLat } from 'app/src/shared/types/index.js';
 
 const KEY = 'lastMarker' as const;
 
-export const setItem = (value: LngLat) => {
+export const setMarker = (value: LngLat) => {
   sessionStorage.setItem(KEY, JSON.stringify(value));
 };
 
-export const getItem = () => sessionStorage.getItem(KEY);
+export const getMarker = () => sessionStorage.getItem(KEY);
